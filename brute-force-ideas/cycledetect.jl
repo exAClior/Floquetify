@@ -4,6 +4,7 @@ using GraphPlot
 using Compose
 using Cairo
 using Fontconfig
+using Graphs
 
 function dfs_cycle_check(g::SimpleDiGraph, v::Int, visited::Vector{Bool}, parent::Int, rec_stack::Vector{Bool}, used_edges::Set{Tuple{Int, Int}})::Bool
     visited[v] = true
@@ -58,7 +59,7 @@ for i in 1:n
         y = rand(i:n)
         if y != i && !has_edge(g,i,y)
                 add_edge!(g, i, y)
-                if rand() > 0.999
+                if rand() > 0.9999
                     add_edge!(g, y, i)
                 end
         end
@@ -70,7 +71,7 @@ p = gplot(g, nodelabel=1:nv(g),   # Label the nodes with their indices
 edgelabel=1:ne(g)) 
 
 # save to png
-draw(PNG("test.png", 16cm, 16cm), gplot(g, nodelabel=1:nv(g),   # Label the nodes with their indices
-edgelabel=1:ne(g)) )
+# draw(PNG("test.png", 16cm, 16cm), gplot(g, nodelabel=1:nv(g),   # Label the nodes with their indices
+# edgelabel=1:ne(g)) )
 @time println(has_cycle(g))
 # display(p)
