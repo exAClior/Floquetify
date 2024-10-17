@@ -1,5 +1,7 @@
 #import "@preview/touying:0.4.2": *
 #import "@preview/touying-simpl-hkustgz:0.1.0" as hkustgz-theme
+#import "@preview/physica:0.9.3": *
+
 
 #let s = hkustgz-theme.register()
 
@@ -42,19 +44,59 @@
 
 = News
 
-Floquet Code has high threshold
-- Threshold of $0.2% - 0.3%$ without native weight-2 measurement compare to $0.5% - 0.7%$ for surface code (why is there a range?) @Gidney2021
+Floquet Code has good quality 
+- Threshold of $0.2% - 0.3%$ without native weight-2 measurement compare to $0.5% - 0.7%$ for surface code  @Gidney2021
 - Thershold of $1.5% - 2.0%$ with native weight-measurements @Gidney2021
 - $6.4%$ on photonic platform @Hilaire2024
 -	$k/n arrow.r 1/2$ on qudit codes @Tanggara2024
 - $5.6x$ fewer physical qubits are needed to implement Floquet code at depolarizing noise of $0.1%$ @Higgott2023
 
-
-
-
 = Steps
 
+== Overview of Quantum Error Correction
+
+- Quantum error correction consists of encoding, syndrome extraction, error detection and correction.
+
+- Quantum Error Correction is determined by encoding method and error syndromes. 
+
+- Floquet code differs from static code in syndrome extraction 
+
+== Encoding
+
+- Encoding process is a linear map of input logical state from a smaller Hiblert space to a subspace of larger Hilbert space.
+- Errors map states from one subspace to another.
+
+#figure(image("img/encoding_pic.png",width:70%))
+
+=== Static Code: Repetition Code
+- Encoding: $ket(0) arrow.r ket(000)$ and $ket(1) arrow.r ket(111)$
+- Protects from $X$ error but not $Z$ error
+
+#figure(image("img/repetition_code.png",width:70%))
+
+#pagebreak()
+
+=== Floquet Code:
+
+== Syndrome Extraction
+
+- Syndrome extraction is the process of determining which subspace the state is in.
+
+#pagebreak()
+
+=== Static Code: Shor-style Measurement
+#figure(image("img/shor-style-meas.png",width:50%))
+
+=== Floquet Code: Weight-2 Measurement
+how is it equivalent to static code syndrome measurement?
+
+== Error Correction
+
 = Conclusion
+
+What are needed to define a Floquet code?
+
+Floquet code has comparable quality as surface code but requires lower connectivity on hardware
 
 = Helper Slides
 
