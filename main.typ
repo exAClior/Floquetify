@@ -112,6 +112,8 @@ Embedding was possible for open boundary condition which is more physical "embed
 
 "First, choose a quantum error correction code to encode each qubit. Second, design a syndrome extraction circuit for this code. This quantum circuit is run regularly and returns a bit string, the so-called syndrome, which is then used to identify errors." @Delfosse2023
 
+"Previous attempts to construct circuits with more relaxed hardware requirements have faced significant challenges. Lower connectivity either demands unreasonable overhead in the cycle depth or the use of alternative codes sacrificing logical performance [Bac05; Cha+20; Sun+22]. Further challenges are presented by various non-ideal realities of hardware, such as the presence of leakage states. Modifications to improve the code’s resilience to such effects also typically introduce additional overhead and harm logical performance [Fow13a]" @McEwen2023 this is why you NEED Floquet code to implement QEC on a hardware with lower connectivity. Supposedly, it is easier to build a hardware with lower connectivity.
+
 = Hello
 Statement: like proof 
 

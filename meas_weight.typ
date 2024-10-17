@@ -42,6 +42,16 @@
 
 = News
 
+Floquet Code has high threshold
+- Threshold of $0.2% - 0.3%$ without native weight-2 measurement compare to $0.5% - 0.7%$ for surface code (why is there a range?) @Gidney2021
+- Thershold of $1.5% - 2.0%$ with native weight-measurements @Gidney2021
+- $6.4%$ on photonic platform @Hilaire2024
+-	$k/n arrow.r 1/2$ on qudit codes @Tanggara2024
+- $5.6x$ fewer physical qubits are needed to implement Floquet code at depolarizing noise of $0.1%$ @Higgott2023
+
+
+
+
 = Steps
 
 = Conclusion
@@ -51,5 +61,7 @@
 == Terms
 - "The teraquop footprint is the number of physical qubits required to create a logical qubit reliable
 enough to survive one trillion operations."
+
+= References
 
 #bibliography("refs.bib", style: "springer-mathphys")
