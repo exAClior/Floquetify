@@ -79,11 +79,9 @@ Floquet Code has good qualities
 - Generated group has center $X_1X_2X_3X_4$ and $Z_1Z_2Z_3Z_4$. 
 - Logical operators commutes with all *checks*: $X_1X_2$, and $Z_1Z_3$
 
-#pagebreak()
+== Honeycomb Code:
 
-== Floquet Code:
-
-=== Example: Honeycomb Code
+=== Definition: 
 
 #grid(columns: (40%, 50%), gutter:10%, align: top,
 	enum(
@@ -109,13 +107,21 @@ figure(image("img/honeycomb_code_def.png",width:80%)))
 figure(image("img/honeycomb_code_def.png",width:80%)))
  
 #pagebreak()
-
-
 === Measurement Visualized
 
-#figure(image("img/honeycomb_code_meas.png",width:30%))
+#figure(image("img/honeycomb_code_meas.png",width:25%))
 #footnote[Zhu, Guo-Yi, and Simon Trebst. "Qubit fractionalization and emergent Majorana liquid in the honeycomb Floquet code induced by coherent errors and weak measurements." arXiv preprint arXiv:2311.08450 (2023).
 ]
+
+=== Embeded Toric Code
+
+#grid(columns: (50%, 50%), gutter:10%, align: top,[
+- ISG at step $r >= 3$ contains all hexagons and $r mod 3$ edge checks.
+- Each edge check halfs the degree of freedom of qubits on the edge.
+- Effectively, the code is a *lattice of hexagons* with *embedded toric code* on each hexagon.
+],
+figure(image("img/honeycomb_superlattice.png"))) @Hastings2021
+
 = Conclusion
 
 == Conclusion
