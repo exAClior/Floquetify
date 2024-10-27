@@ -40,18 +40,17 @@ Examples of process code include stabilizer codes, subsystem codes, and Floquet 
 
 The operations of a process code can be represented using ZX-diagram @rodatz2024floquetifying. For a ZX-diagram $D$, the linear map associated with $D$ is denoted as $[[D]]$. In the ZX-diagram, a spider leg loosely correspond to a qubit at a given time. An error on a qubit is represented by a tuple $(e,t)$ where $t$ denotes the error type and $e$ denotes the spider leg. Similarily, $E = {(e_i, t_i)}_{i=1}^n$ represents a sequence of errors. The notation $D + E$ is used to represent the ZX-diagram after errors are applied. For a sequence of correctable errors $E$, we denote $[[D + E]] = 0$. Such notation is motivated by the fact that we could always correct these circuits. And, their contribution to computation is with probability 0  @rodatz2024floquetifying.
 
-== Pauli Web
+== Pauli Web @bombin2023unifying
 
-A Pauli Web is a coloring of legs of a spider with phase $k pi$ and $plus.minus pi/2$ where $k$ is an integer. The coloring is such that adding $pi$ phase spiders of the same color on the legs preserves linear map represented by the ZX-diagram. 
+A Pauli Web is a coloring of legs of a spider with phase $k pi$ and $plus.minus pi/2$ where $k$ is an integer. The coloring of a network of spiders denote *a stabilizer* for state represented by the network of spiders @bombin2023unifying. For example, the Pauli Web in @stabilizer_pauli_web denotes stabilizers. 
 
-#figure(image("img/pauli_web_example.png", width: 80%))
+#figure(image("img/pauli_web_example.png", width: 80%),placement: none) <stabilizer_pauli_web>
 
-A usecase of Pauli Web is to verify code distance for a process code.
+Pauli Web can be used for verifying correctability of an error sequence. For example, consider the following part of a linear map. Addition of spiders of the same color on the legs can be viewed as a stabilizer measurment. A linear map that equals to $-1$ times itself must be zero, therefore correctable.
 
+#figure(image("img/proof_of_correctable.png", width: 80%),placement:none)
 
-#pagebreak()
-
-
+The generation of Pauli Web can be done with Integer Programming easily according to rules in @rodatz2024floquetifying.
 
 
 
