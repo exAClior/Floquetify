@@ -9,7 +9,7 @@
 #let s = (s.methods.info)(
   self: s,
   title: [Floquet Code],
-  subtitle: [Establishing Connection between Floquet Code and Toric Code],
+  subtitle: [From Honeycomb Code to Toric Code],
   author: [Yusheng Zhao],
   date: datetime.today(),
   institution: [HKUST(GZ)],
@@ -23,35 +23,31 @@
 #let (slide, empty-slide, title-slide, outline-slide, new-section-slide, ending-slide) = utils.slides(s)
 #show: slides.with()
 
-#outline-slide() 
 
-= Vision
+#outline-slide()
 
-== Floquet Code needs more attention 
+= Motivations
 
-- Study of Fault-tolerant quantum computation: *Quantum Memory* and logical operations
+== Benefit of Floquet Code 
 
-- Design of quantum memory concerns the following properties of a *Quantum Error Correction Code* @Fu2024 
+=== Low-weight Measurement
 
-	#set enum(numbering: "a)")
-	  + Code distance
-		+ Ease of implementing logical gates
-		+ Tradeoffs between the number of logical qubits and distance
+- As a result, good threshold?
 
-- Surface code is not optimal by standard a) and c) @Bravyi2010 but has higher threshold in practice @Fowler2012 due to *low-weight measurement* (@weight-meas) and *lower connectivity* hardware requirements compare to many families of qLDPC codes  @Higgott2023 @McEwen2023
+=== Low Connectivity Requirement
 
-- Floquet code is a family of codes that pushes these strength of surface code even further @Gidney2021
+- Give visualization
 
-= News
+== Floquet Code's Stats 
 
 Floquet Code has good qualities
-- *Threshold* of $0.2% - 0.3%$ without native *weight-2 measurement* @Gidney2021 #footnote[$0.5% - 0.7%$ for surface code]
+- *Threshold* of $0.2% - 0.3%$ without native *weight-2 measurement* @Gidney2021 #footnote[$0.5% - 0.7%$ for surface code (which surface code was this? which error model?)] 
 - Thershold of $1.5% - 2.0%$ with native weight-measurements @Gidney2021  
 - Photon loss threshold: $6.4%$ on photonic platform @Hilaire2024
 -	Code Overhead: $limits(lim)_(n arrow.r infinity) k/n arrow.r 1/2$ on qudit codes @Tanggara2024
 - $5.6 times$ fewer physical qubits are needed to implement Floquet code at depolarizing noise of $0.1%$ compare to surface code @Higgott2023
 
-= Steps
+= Static Code
 
 == Stabilizer Code
 
@@ -78,6 +74,9 @@ Floquet Code has good qualities
 - *Not necessarily commute* with each other
 - Generated group has center $X_1X_2X_3X_4$ and $Z_1Z_2Z_3Z_4$. 
 - Logical operators commutes with all *checks*: $X_1X_2$, and $Z_1Z_3$
+
+= Floquetification 
+
 
 == Honeycomb Code:
 
@@ -132,7 +131,7 @@ figure(image("img/honeycomb_superlattice.png",width:70%))) @Hastings2021
 
 - Floquet code has comparable quality as surface code but requires lower connectivity on hardware
 
-= Helper Slides
+= Appendix 
 
 == Terms
 - "The *teraquop footprint* is the number of physical qubits required to create a logical qubit reliable enough to survive one trillion operations." <teraquop>
@@ -149,6 +148,6 @@ figure(image("img/honeycomb_superlattice.png",width:70%))) @Hastings2021
 
 #figure(image("img/repetition_code.png",width:70%))
 
-= References
+== References
 
 #bibliography("refs.bib", style: "springer-mathphys")
